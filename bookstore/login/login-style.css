@@ -1,0 +1,62 @@
+body
+{
+    margin: 0;
+    background: url(../images/login-pic.jpg);
+    background-size: cover;
+}
+*
+{
+    box-sizing: border-box;
+}
+.login-box
+{
+    width: 400px;
+    height: 500px;
+    
+
+  
+}
+.signin
+{
+    color: #fff;
+    padding-left:50px; 
+}
+.row
+{
+    
+    width: 400px;
+    height: 400px;
+   
+    background:black ;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #fff;
+    padding-left:50px;
+    padding-top: 20px;
+    margin-left: 90%;
+    margin-top: 10%;
+   border: 10px solid rgb(255, 255, 255);
+    cursor: pointer;
+    opacity: 0.9;
+}
+#head-name
+{
+    font-family: Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-right: 20%;
+    margin-right: 20px;
+}
+.row:hover
+{
+    
+    border: 10px solid #fff;
+    opacity: 0.9;
+}
+    
+.form-control
+{
+    width: 250px;
+}

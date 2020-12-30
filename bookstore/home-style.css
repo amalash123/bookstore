@@ -1,0 +1,457 @@
+body{
+    margin: 0;
+    
+    font-family: Arial;
+    
+}
+*{
+    box-sizing: border-box;
+}
+.header
+{
+    width: 100%;
+    height: 60px;
+    background: #1e56a0;
+    background-image: inherit;
+    padding-top: 10px;
+    float: left;
+    position: fixed; 
+     z-index: 1;
+}
+.menu
+{
+    width: 100%;
+    height: 60px;
+    background: #1e56a0;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    float: left;
+}
+.account
+{
+    color: #fff;
+    
+}
+.logout
+{
+    margin-left: 150px;
+    width: 70px;
+    height: 40px;
+     background-color: black;
+     opacity: 0.8;
+     line-height: 40px;
+     color: #fff;
+     text-align: center;
+     font-size: 20px;
+     float: left;
+     text-decoration: none;
+}
+.logout:hover
+{
+    background:linear-gradient(45deg,
+    #b91eda,
+    #a02ae0,
+    #8234e5,
+    #5d3be8,
+    #c012eb    
+    
+    );
+}
+.main-body
+{
+    width: 100%;
+    height: 600px;
+    background: thistle;
+    background: url(images/body.jpg);
+    background-size: cover;
+    float: left;
+}
+.left
+{
+    width: 50%;
+    height: 600px;
+    float: left;
+    color: white;
+    padding-top: 100px;
+}
+.head
+{
+    font-family: Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+    font-size: 60px;
+    color: #5d3be8,#ffba00;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.motto
+{
+    font-family: cursive;
+    font-weight: bold;
+
+    font-size: 40px;
+    padding-left: 50px; 
+}
+.motto2
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight:bold ;
+}
+.right
+{
+    width: 50%;
+    height: 500px;
+ 
+    font-size: 28px;
+    padding-left: 25%;
+    padding-top: 17%;
+
+    float: left;
+}
+.search
+{
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+    left: 48%;
+    top: 50%;
+    height: 40px;
+    width: 450px;
+    border: 4px solid #1e56a0;
+    display: block;
+    background: #fff;
+    outline: none;
+    color: black;
+    padding: 0px 20px;
+    border-radius: 40px;
+    margin-left: 200px;
+    margin-top: 50px;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 1);
+}
+.search1{
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+    left: 48%;
+    top: 50%;
+    height: 40px;
+    width: 450px;
+}
+.fa-search
+{
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+.links
+{
+    width: 100%;
+    height: 50px;
+    background: #1e56a0;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+.btn
+{
+    width: 25%;
+    height: 50px;
+    border: 2px solid black; 
+    font-size: 30px;
+    padding: 10px 20px;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.btn1
+{
+   
+    background: #1e56a0;
+    color: rgb(255, 255, 255);
+    float: left;
+    
+}
+
+.btn2
+{
+    background: #1e56a0;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+.btn3
+{
+    
+    background: #1e56a0;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+.btn4
+{
+    
+    background: #1e56a0;
+    color: rgb(255, 255, 255);
+    float: left;
+}
+.btn1:hover , .btn3:hover
+{
+    background:#3498db;
+     opacity: 0.8;
+     color: black;
+}
+.btn2:hover , .btn4:hover
+{
+    background:#3498db;
+    color: black;
+
+}
+
+.book-section
+{
+    width: 100%;
+    height: 800px;
+    background:linear-gradient(45deg,
+    #b91eda,
+    #a02ae0,
+    #8234e5,
+    #5d3be8,
+    #c012eb    
+    
+    );
+    padding-left: 1%;
+    padding-top: 50px;
+    text-decoration: none;
+    float: left;
+}
+.book
+{
+top: 10px;
+left: 10px;
+padding: 10px;
+border-radius: 10px;
+transform: translate(-50% -50%);
+cursor: pointer;
+
+
+} 
+.book1
+{
+    width: 30%;
+    height: 300px;
+    border: 5px solid gainsboro;
+background: url(images/gg.jpg);
+background-size: cover;
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    float: left;
+    
+   
+}
+.book2
+{
+    width: 30%;
+    height: 300px;
+    border: 5px solid gainsboro;
+    background: url(images/bat.jpg);
+background-size: cover;
+    margin: 20px;
+    float: left;
+}
+.book3
+{
+    width: 30%;
+    height: 300px;
+    margin: 20px;
+    background: url(images/lit.jpg);
+background-size: cover;
+    border: 5px solid gainsboro ;
+    float: left;
+}
+.book4
+{
+    width: 30%;
+    height: 300px;
+    background: url(images/horror2.jpg);
+background-size: cover;
+    border: 5px solid gainsboro;
+    margin: 20px;
+    float: left;
+}
+.book5
+{
+    width: 30%;
+    height: 300px;
+    background: url(images/fantasy2.jpg);
+background-size:cover;
+    border: 5px solid gainsboro;
+    margin: 20px;
+    float: left;
+}
+.book6
+{
+    width: 30%;
+    height: 300px;
+    background: url(images/action.jpg);
+background-size: cover;
+    border: 5px solid gainsboro;
+    margin: 20px;
+    float: left;
+}
+.shadow
+{
+    cursor: pointer;
+    border-radius: 5px;
+    border: 5px solid black;
+    
+    
+}
+.shadow1
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding-top: 35%;
+    font-size: 30px;
+    text-decoration: none;
+    color: seashell;
+    
+    font-weight: bold;
+    display: none;
+}
+.book1:hover .shadow1{
+    display: block;
+    
+}
+.shadow2
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding-top: 35%;
+    font-size: 30px;
+    color: seashell;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: none;
+}
+.book2:hover .shadow2{
+    display: block;
+}  
+.shadow3
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    color: seashell;
+    padding-top: 35%;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: none;
+}
+.book3:hover .shadow3{
+    display: block;
+}
+.shadow4
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    color: seashell;
+    padding-top: 35%;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: none;
+}
+.book4:hover .shadow4{
+    display: block;
+}
+.shadow5
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding-top: 35%;
+    font-size: 30px; 
+    color: seashell;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: none;
+}
+.book5:hover .shadow5{
+    display: block;
+}
+.shadow6
+{
+    
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding-top: 35%;
+    color: seashell;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: none;
+}
+.book6:hover .shadow6{
+    display: block;
+}
+.footer
+{
+    width: 100%;
+    height: 80px;
+    background: mediumpurple;
+    float: left;
+}
+ul
+{
+    margin:0px;
+    padding: 0px;
+    list-style: none;
+    color: white ;
+    
+    }
+ul li{
+    float: left;
+    width: 200px;
+    height: 40px;
+     background-color: black;
+     opacity: 0.8;
+     line-height: 40px;
+     text-align: center;
+     font-size: 20px;
+     margin-right: 3px;
+}
+ul li a
+{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+ul li a:hover
+{
+    background:linear-gradient(45deg,
+    #b91eda,
+    #a02ae0,
+    #8234e5,
+    #5d3be8,
+    #c012eb    
+    
+    );
+   
+}
+ul li ul li{
+    display: none;
+}
+ul li:hover ul li{
+    display: block;
+}
