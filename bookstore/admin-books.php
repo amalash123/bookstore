@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Comic</title>
+    <title>admin-books</title>
 </head>
 <body>
 <header class="bg-info " style="position: fixed; width: 100%; z-index: 1;">
     <div class="container-fluid">
       <div class="row  text-white">
           <div class="col-md-11 col-9 p-3 pl-5">
-           <H2>Comic</H2>
+           <H2>admin-books</H2>
           </div>
           <div class="col-md-1 col-3 p-3 pl-5">
           <a href="../admin/book-management.php"class="btn btn-light">Back</a>
@@ -34,7 +34,7 @@
         
     <?php
     $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
-    $RESULT = $mysqli->query("SELECT * FROM comic") or die(mysqli_error($mysqli));
+    $RESULT = $mysqli->query("SELECT * FROM books") or die(mysqli_error($mysqli));
     ?>
     <div class="row justify-content-center">
         <table class="table">
@@ -46,6 +46,7 @@
                     <th>Author</th>
                     <th>Descrption</th>
                     <th>Price</th>
+                    <th>Category</th>
                     <th colspan="2">Action</th>
                     </tr>
                 </thead>
@@ -57,9 +58,10 @@
             <td><?php echo $row['author']; ?> </td>
             <td><?php echo $row['description']; ?> </td>
             <td><?php echo $row['price']; ?> </td>
+            <td><?php echo $row['category']; ?> </td>
             <td>
                 
-                <a href="process.php?delete=<?php echo $row['id']; ?>"
+                <a href="process.php?delete=<?php echo $row['book_id']; ?>"
                 class="btn btn-danger">Delete</a>
 
             </td>
@@ -100,6 +102,19 @@
         <label>Price</label>
         <input type="text" name="price" class="form-control" value="<?php echo $price; ?>" placeholder="Price">
     </div> 
+
+    <div class="form-group">
+    <label>Category</label>
+       <select name="category" id="category">
+       <option value="action">Action</option>
+       <option value="fantasy">Fantasy</option>
+       <option value="thriller">Thriller</option>
+       <option value="horror">Horror</option>
+       <option value="fiction">Fiction</option>
+       <option value="comic">Comic</option>
+       </select>
+       </div>
+
     <div class="form-group">
     <label>Image</label>
         <input type="file" name="file" id="file" class="form-control"  >

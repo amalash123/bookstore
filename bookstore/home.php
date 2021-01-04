@@ -75,7 +75,7 @@ $RESULT->fetch_assoc();
 
 </div>
 <div class="links">
-   <button class=" btn btn1"><i class="fa fa-shopping-cart" > </i> My Cart</button>
+<a href="all-books.php"> <button class=" btn btn1"><i class="fa fa-shopping-cart" > </i> All Books</button></a>
    <button class=" btn btn2"><i class="fa fa-book" aria-hidden="true"> </i> Exchange Section</button>
    <button class=" btn btn3"><i class="fa fa-truck" aria-hidden="true"></i> Orders</button>
    <a href="my exchange/my-exchange.php"><button class=" btn btn4"><i class="fa fa-exchange" aria-hidden="true"> </i> My Exchange</button></a>
@@ -85,7 +85,7 @@ $RESULT->fetch_assoc();
     <div class=" book book1">
 <div class="shadow shadow1">
     <center>
-<a href="genre-pages/thriller/user-thriller.php">Thriller </a>
+<a href="thriller.php">Thriller </a>
 <hr />
 </center>
 </div>
@@ -93,7 +93,7 @@ $RESULT->fetch_assoc();
     <div class=" book book2">
         <div class="shadow shadow2">
             <center>
-                <a href="genre-pages/comic/user-comic.php">Comics</a>
+                <a href="comic.php">Comics</a>
                 <hr />
                 </center>
     
@@ -103,7 +103,7 @@ $RESULT->fetch_assoc();
     <div class=" book book3">
         <div class="shadow shadow3">
             <center>
-                <a href="genre-pages/fiction/user-fiction.php">Fiction </a>
+                <a href="fiction.php">Fiction </a>
                 <hr />
                 </center>
         </div>
@@ -113,7 +113,7 @@ $RESULT->fetch_assoc();
         <a href="got.html"></a>
         <div class="shadow shadow4">
             <center>
-            <a href="genre-pages/horror/user-horror.php">   Horror</a> 
+            <a href="horror.php">   Horror</a> 
                 <hr />
                 </center>
         </div>
@@ -122,7 +122,7 @@ $RESULT->fetch_assoc();
     <div class=" book book5">
         <div class="shadow shadow5">
             <center>
-                <a href="genre-pages/fantasy/user-fantasy.php"> Fantasy </a>
+                <a href="fantasy.php"> Fantasy </a>
                 <hr />
                 </center>
             </div>
@@ -131,7 +131,7 @@ $RESULT->fetch_assoc();
         <div class="shadow shadow6">
 
             <center>
-                <a href="genre-pages/action/user-action.php">  Action </a>
+                <a href="action.php">  Action </a>
                 <hr />
                 </center>
         </div>

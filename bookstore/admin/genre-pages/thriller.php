@@ -2,35 +2,27 @@
 require_once 'process.php';
 $output="";
 ?>  
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Horror</title>
+    <title>Action</title>
     <style>
         body{
-            background: rgb(238, 238, 238);
+           
+            margin:0;
+                background:url(fiction.jpg) repeat:no-repeat;
+               
         }
        .info
        {
-           height:40%;
+           height:100%;
            width:100% ;
-           background:dimgray;
-      
-           margin-right:20px;
            color:white;
        }
-       .sidebar 
-       {
-           width:100%;
-           height:39px;
-           text-align:center;
-           border-collapse:collapse;
-           color:white;
-       }
+       
 
 
     </style>
@@ -39,11 +31,12 @@ $output="";
     <header class="" style="position: fixed; width: 100%; z-index: 1; background: linear-gradient(45deg, green,rgb(223, 148, 50));">
         <div class="container-fluid">
           <div class="row  text-white">
-              <div class="col-md-11 col-9 p-3 pl-5">
-               <H2>Horror</H2>
+              <div class="col-md-10 col-9 p-3 pl-5">
+               <H2>Action</H2>
               </div>
-              <div class="col-md-1 col-3 p-3 pl-5">
-              <a href="../home.php"class="btn btn-success">Back</a>
+              <div class="col-md-2 col-3 p-3 pl-5">
+              <a href=""class="btn btn-success ">Cart</a>
+              <a href=""class="btn btn-success">Back</a>
               </div>
               </div>
               </div>
@@ -70,7 +63,7 @@ $output="";
                 <div class="row mt-4">
                 <?php
    $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
-   $RESULT = $mysqli->query("SELECT * FROM horror") or die(mysqli_error($mysqli));
+   $RESULT = $mysqli->query("SELECT * FROM books WHERE category = 'thriller' ORDER BY book_id ASC") or die(mysqli_error($mysqli));
    while($row = $RESULT->fetch_assoc()):?>
         
             
@@ -82,8 +75,8 @@ $output="";
           <h5 style="font-size:medium">by <?php echo $row['author']; ?> </h5>  
            
           <h5 style="font-size:larger; color:red;"><i class="fa fa-inr" aria-hidden="true"></i> <?php echo $row['price']; ?> </h5> 
-          <a href="process.php?delete=<?php echo $row['id']; ?>"
-                class="btn btn-primary">ADD TO CART</a>
+          <a href="process.php?delete=<?php echo $row['book_id']; ?>"
+          class="btn btn-danger">DELETE</a>
                         </div>
                         </div>
                     </div>
