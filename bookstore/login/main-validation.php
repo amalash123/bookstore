@@ -14,10 +14,10 @@ if ($num ==1)
 {
     $_SESSION['username'] = $username;
     $_SESSION['customerid'] = $row['user_id'];
-    header('location:../checkout.php');
+    header('location:../index.php');
 }
 else {
-    header('location:login.php?message=1');
+    header('location:main-login.php?message=1');
  //    $message =  'incorrect Credentials';
   }
 ?>

@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>admin-books</title>
+    <title>Add New Books</title>
+    <style>
+    body
+    {
+        margin:0;
+            background:linear-gradient(45deg,
+    #b91eda,
+    #a02ae0,
+    #8234e5,
+    #5d3be8,
+    #c012eb    
+    
+    );
+        }
+
+    }
+    </style>
 </head>
 <body>
-<header class="bg-info " style="position: fixed; width: 100%; z-index: 1;">
+<header class="bg-primary " style="position: fixed; width: 100%; z-index: 1;">
     <div class="container-fluid">
       <div class="row  text-white">
-          <div class="col-md-11 col-9 p-3 pl-5">
-           <H2>admin-books</H2>
+          <div class="col-md-10 col-9 p-3 pl-5">
+           <H2>Add New Books</H2>
           </div>
-          <div class="col-md-1 col-3 p-3 pl-5">
-          <a href="../admin/book-management.php"class="btn btn-light">Back</a>
+          <div class="col-md-2 col-3 p-3 pl-5">
+          <a href="admin/admin.php"class="btn btn-light"><i class="fa fa-home"></i>Home</a>
           </div>
           </div>
           </div>
 </header>          
    
-<div class="container-fluid " style="padding-top:6rem">
+<div class="container " style="padding-top:6rem">
 <?php require_once 'process.php'; ?>
     <?php
     if (isset($_SESSION['message'])):?>
@@ -36,39 +52,7 @@
     $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
     $RESULT = $mysqli->query("SELECT * FROM books") or die(mysqli_error($mysqli));
     ?>
-    <div class="row justify-content-center">
-        <table class="table">
-            <thead>
-                <tr>
-
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Descrption</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th colspan="2">Action</th>
-                    </tr>
-                </thead>
-<?php
-        while($row = $RESULT->fetch_assoc()):?>
-        <tr>
-          <td><img src="<?php echo $row['image'];?>" height="100px" width="100px"> </td>
-            <td><?php echo $row['name']; ?> </td>
-            <td><?php echo $row['author']; ?> </td>
-            <td><?php echo $row['description']; ?> </td>
-            <td><?php echo $row['price']; ?> </td>
-            <td><?php echo $row['category']; ?> </td>
-            <td>
-                
-                <a href="process.php?delete=<?php echo $row['book_id']; ?>"
-                class="btn btn-danger">Delete</a>
-
-            </td>
-        </tr> 
-        <?php endwhile; ?>
-        </table>
-</div>
+   
 
     <?php
     function pre_r($array)
@@ -82,10 +66,10 @@
     
     
     ?>
-    <div class="tag" style="width: 100%; display: inline-table; height: 50px; background: green; text-align: center; font: bold; color: white;">ADD NEW BOOKS</div>
-    <div class="row justify-content-center" >
+   
+    <div class="row justify-content-center text-white" >
     <form action="process.php" method="POST" enctype="multipart/form-data">
-    <div class="form-group mt-3">
+    <div class="form-group  mt-3">
         
         <label>Name</label>
         <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter Name of Book">

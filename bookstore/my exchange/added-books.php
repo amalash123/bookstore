@@ -58,12 +58,17 @@ $output="";
               
                 <div class="row mt-4">
                 <?php
+$c_id = $_SESSION['customerid'];
+
+ 
+
+
    $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
-   $RESULT = $mysqli->query("SELECT * FROM exchange") or die(mysqli_error($mysqli));
+   $RESULT = $mysqli->query("SELECT * FROM exchange WHERE userid='$c_id'") or die(mysqli_error($mysqli));
    while($row = $RESULT->fetch_assoc()):?>
         
             
-            <div class="col-md-4 pb-3">
+            <div class="col-md-3 pb-3">
                     <div class="card">
                     <div class="card-body">
                     <img src="<?php echo $row['image'];?>" height="200px" width="100%">
@@ -72,8 +77,8 @@ $output="";
           <h5 style="font-size:medium"> <?php echo $row['description']; ?> </h5>  
            
           <h5 style="font-size:larger; color:red;"><i class="fa fa-inr" aria-hidden="true"></i> <?php echo $row['price']; ?> </h5> 
-          <a href="process.php?delete=<?php echo $row['id']; ?>"
-                class="btn btn-danger">DELETE THIS ENTRY</a>
+          <h5 style="font-size:medium">To Buy <br> contact : <?php echo $row['mobile']; ?> </h5>  
+          <a href="process.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE THIS AD</a>
                         </div>
                         </div>
                     </div>
@@ -83,17 +88,17 @@ $output="";
         </div>
     </div>  
 </section>    
-<footer class=" pt-3 mt-4" style=" background:linear-gradient(45deg,
+<footer class=" mt-5" style=" width: 100%;   background:linear-gradient(45deg,
 #b91eda,
 #a02ae0,
 #8234e5,
 #5d3be8,
 #c012eb    
 
-);">
-  <div class="container-fluid"></div>
+); width:100% margin-top:10rem" >
+  
     <div class="row">
-      <div class="col-md-12 text-center text-white">
+      <div class="col-md-12 text-center mt-5 text-white" >
         <h6>Follow Me Here</h6>
         <h3>
           <a href="https://www.linkedin.com/in/amalash-k-b0a4651a9/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>

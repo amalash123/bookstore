@@ -5,6 +5,7 @@ $author="";
 $description="";
 $price="";
 $category="";
+$cart="";
 $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
 if(isset($_POST['save']))
 {

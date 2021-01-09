@@ -1,6 +1,6 @@
 <?php
  session_start();
-header('location:../checkout.php');
+header('location:../main-login.php');
 
  $con = mysqli_connect('localhost',"root" ,"" ,"bookstore");
  mysqli_select_db($con, 'bookstore');

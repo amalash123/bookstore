@@ -36,51 +36,8 @@
     $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
     $RESULT = $mysqli->query("SELECT * FROM exchange") or die(mysqli_error($mysqli));
     ?>
-    <div class="row justify-content-center">
-        <table class="table">
-            <thead>
-                <tr>
-
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Descrption</th>
-                    <th>Price</th>
-                    <th colspan="2">Action</th>
-                    </tr>
-                </thead>
-<?php
-        while($row = $RESULT->fetch_assoc()):?>
-        <tr>
-          <td><img src="<?php echo $row['image'];?>" height="100px" width="100px"> </td>
-            <td><?php echo $row['name']; ?> </td>
-            <td><?php echo $row['author']; ?> </td>
-            <td><?php echo $row['description']; ?> </td>
-            <td><?php echo $row['price']; ?> </td>
-            <td>
-                
-                <a href="process.php?delete=<?php echo $row['id']; ?>"
-                class="btn btn-danger">Delete</a>
-
-            </td>
-        </tr> 
-        <?php endwhile; ?>
-        </table>
-</div>
-
-    <?php
-    function pre_r($array)
-    {
-        echo '<pre>';
-        print_r($array);
-        echo '</pre>';
-
-        
-    }
-    
-    
-    ?>
-    <div class="tag" style="width: 100%; display: inline-table; height: 50px; background: green; text-align: center; font: bold; color: white;">ADD NEW BOOKS</div>
+   
+   
     <div class="row justify-content-center" >
     <form action="process.php" method="POST" enctype="multipart/form-data">
     <div class="form-group mt-3">
@@ -99,6 +56,10 @@
     <div class="form-group">   
         <label>Price</label>
         <input type="text" name="price" class="form-control" value="<?php echo $price; ?>" placeholder="Price">
+    </div> 
+    <div class="form-group">   
+        <label>Mobile</label>
+        <input type="tel" name="mobile" class="form-control" value="<?php echo $price; ?>" placeholder="Mobile Number">
     </div> 
     <div class="form-group">
     <label>Image</label>

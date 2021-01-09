@@ -19,7 +19,7 @@
         <div class="container-fluid">
           <div class="row  text-white">
               <div class="col-md-11 col-9 p-3 pl-5">
-               <H2>Manage Books</H2>
+               <H2>All Books</H2>
               </div>
               <div class="col-md-1 col-3 p-3 pl-5">
               <a href="admin.php"class="btn btn-light">Back</a>

@@ -1,7 +1,3 @@
-<?php
-require_once 'process.php';
-$output="";
-?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,23 +18,54 @@ $output="";
     
     );
         }
-       .info
-       {
-           height:100%;
-           width:100% ;
-           color:white;
-       }
-       
+        .search
+{
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+    left: 48%;
+    top: 50%;
+    height: 40px;
+    width: 450px;
+    border: 4px solid #1e56a0;
+    display: block;
+    background: #fff;
+    outline: none;
+    color: black;
+    padding: 0px 20px;
+    border-radius: 40px;
+    margin-left: 200px;
+    margin-top: 50px;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 1);
+}
+.search1{
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+    left: 48%;
+    top: 50%;
+    height: 40px;
+    margin-top:15%;
+    margin-left: 50%;
+    width: 450px;
+}
+ .result{
+    font-size: 10px;
+    margin-top:2%;
+    margin-left: 13%;
+    height: 300px;
+    width:70%;
+    background:#fff;
+    color: black;
+ }      
 
 
     </style>
 </head>
 <body class="bg-info">
-    <header class="" style="position: fixed; width: 100%; z-index: 1; background: linear-gradient(45deg, green,rgb(223, 148, 50));">
+    <header class="" style="position: fixed; width: 100%; z-index: 1; ">
         <div class="container-fluid">
           <div class="row  text-white">
               <div class="col-md-5 col-9 p-3 pl-5">
-               <H2>Comic</H2>
+               
               </div>
               <div class="col-md-7 col-3 p-3 pl-5">
               <nav class="navbar navbar-expand-lg navbar-light ">
@@ -93,49 +120,59 @@ $output="";
               </div>
               </div>
     </header>
-    <section class="" >
-    <div class="container " style="padding-top:5rem";>
+    
    
+    
+    
+    
+    <div class="container text-white mt-2">
+    <h2 class='text-center text-white'>Your Search Results</h2>
+
+    <div class="search1 justify-content-center">
+            <form action="search.php" method="GET">
+  <input class="search" type="text" name="q"  placeholder=" Search by Name/Author/Category " ><i class="fa fa-search" ></i> 
+  
+  </form>  
+  <?php
+if(isset($_GET['q'])){
+    $q = $_GET['q'];
+    session_start();
+    
        
-            <div class="col-sm-12">
-               
-                <div class="row mt-4">
-                <?php
-   $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
-   $RESULT = $mysqli->query("SELECT * FROM books WHERE category = 'comic' ORDER BY book_id ASC") or die(mysqli_error($mysqli));
-   while($row = $RESULT->fetch_assoc()):?>
+        $mysqli = new mysqli('localhost','root','','bookstore') or die(mysqli_error($mysqli));
+        $RESULT = $mysqli->query("SELECT * FROM books  WHERE name LIKE '%$q%'") or die(mysqli_error($mysqli));
+        $num_rows = mysqli_num_rows($RESULT);
+       
+    }
         
-            
-            <div class="col-md-3 pb-3">
-                    <div class="card">
-                    <div class="card-body">
-                    <img src="<?php echo $row['image'];?>" height="200px" width="100%">
-                    <h5 style="font-size:x-smaller"> <?php echo $row['name']; ?> </h5>
-          <h5 style="font-size:medium">by <?php echo $row['author']; ?> </h5>  
-            <h5 style="font-size:larger; color:red;"><i class="fa fa-inr" aria-hidden="true"></i> <?php echo $row['price']; ?> </h5> 
-          
-          <a href="addToCart.php?id=<?php echo $row['book_id']; ?>"
-                class="btn btn-primary"> <i class="fa fa-cart-arrow-down"></i> ADD TO CART</a>
-                
-                <a   href='single.php?id=<?php echo  $row["book_id"] ?>' class="btn btn-default btn-xs pull-left">
-                       Details
-                    </a>
-                        </div>
-                        
-                        </div>
-                    </div>
-                    <?php endwhile; ?>
-                </div>
-            </div>
+        ?> 
+</div>  
+<h4 class='text-center'><strong><?php echo  $num_rows; ?></strong> Results for '<?php echo $q; ?>'</h4>
+<div class="result text-center p-2">
+<?php
+while($row = $RESULT->fetch_assoc()):
+        $id = $row['book_id'];
+        $name = $row['name'];
+        $desc = $row['description'];
+
+       
+        ?>
+       <h3> <a   href='single.php?id=<?php echo  $row["book_id"] ?>'><?php  echo $name; ?> </a></h3>
+<p><h4><?php  echo $desc; ?></h4>
+
+<?php
+        endwhile; 
+        ?>
+      
+    
+        
+        
+     
+    
+    
+
         </div>
-    </div>  
-</section>    
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/2392c4c722.js" crossorigin="anonymous"></script>
-</body>
-</html>
+                   
+        
+    </div>
+    </div>

@@ -23,8 +23,8 @@ $RESULT->fetch_assoc();
         <li><a href=""><i class="fa fa-home"></i>  Home</a></li>
         <li><a href="">My Account</a>
             <ul>
-            <li><a href="login/login.php"><i class="fa fa-user-circle" > </i>  Login</a></li>
-            <li><a href="login/signup.php"><i class="fa fa-sign-in" ></i> Signup</a></li>
+            <li><a href="login/main-login.php"><i class="fa fa-user-circle" > </i>  Login</a></li>
+            <li><a href="login/main-signup.php"><i class="fa fa-sign-in" ></i> Signup</a></li>
             <li><a href="admin/admin-login.php"><i class="fa fa-sign-in" ></i> Admin Login</a></li>
         </ul>
         </li>
@@ -32,21 +32,38 @@ $RESULT->fetch_assoc();
             <UL>
             <li><a href="">Publications</a></li>
             <li><a href="">Give Away</a></li>
-            <li><a href="main.html"><i class="fa fa-envelope" ></i>Contact</a></li>
+            <li><a href="myaccount.php"><i class="fa fa-envelope" ></i>Contact</a></li>
         </ul>
         </li>
-        <li><a href="abt.html"><i class="fa fa-info-circle" ></i> About</a></li>
+        <li><a class="account">
+        <i class="fa fa-user-circle" > </i>
+        <?php  
+if(!isset($_SESSION['username']) && empty($_SESSION['username']) ){ 
+    echo 'GUEST';
+}else{
+    echo $_SESSION['username']; } ?>
+</a>
+<UL>
+            <li> <?php  
+if(!isset($_SESSION['username']) && empty($_SESSION['username']) ){ 
+    echo '';
+}else{
+    echo '<a href="logout.php">Logout</a>';} ?>
+           </li> 
+        </ul>
+   </li>
+      
     </ul>
+   
   
-  <?php  // ADDING USERNAME FROM DATABASE
-  
-          #<a class="account">
-        # <i class="fa fa-user-circle" > </i>
-       # <?php echo $_SESSION['name']; </a>?>
+    
+
       
    
-    <a class="logout" href="logout.php">Logout</a>
+    <!--<a class="logout" href="logout.php">Logout</a>-->
 </div>
+
+
 </div>
 
 </div>
@@ -66,8 +83,10 @@ $RESULT->fetch_assoc();
     <div class="right">
       
             <div class="search1">
-  <input class="search" type="text"  placeholder=" Search by Name/Author/Category" >
-  <i class="fa fa-search" ></i>             
+            <form action="search.php" method="GET">
+  <input class="search" type="text" name="q"  placeholder=" Search by Name/Author/Category " ><i class="fa fa-search" ></i> 
+  
+  </form>   
 </div>  
                    
         
@@ -75,9 +94,11 @@ $RESULT->fetch_assoc();
 
 </div>
 <div class="links">
+
+
 <a href="all-books.php"> <button class=" btn btn1"><i class="fa fa-shopping-cart" > </i> All Books</button></a>
-   <button class=" btn btn2"><i class="fa fa-book" aria-hidden="true"> </i> Exchange Section</button>
-   <button class=" btn btn3"><i class="fa fa-truck" aria-hidden="true"></i> Orders</button>
+<a href="my exchange/all-exchange-books.php"> <button class=" btn btn2"><i class="fa fa-book" aria-hidden="true"> </i> Exchange Section</button></a>
+<a href="myaccount.php"> <button class=" btn btn3"><i class="fa fa-truck" aria-hidden="true"></i> My Orders</button></a>
    <a href="my exchange/my-exchange.php"><button class=" btn btn4"><i class="fa fa-exchange" aria-hidden="true"> </i> My Exchange</button></a>
 
 </div>

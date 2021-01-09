@@ -34,7 +34,7 @@
 <div class="row">
 <div class="col-md-6">
 <h2>Log in  Here</h2>
-<form action="validation.php" method="post">
+<form action="main-validation.php" method="post">
 <div class="form-group">
 <label>Username</label>
 <input type="text" name="user" class="form-control" required>
@@ -48,7 +48,7 @@
 <p>
 <h7 >New to Bookaholic
     <br>
-<a href="signup.php">Sign up Here!!</a></h7>
+<a href="main-signup.php">Sign up Here!!</a></h7>
 </P>
 </tr>
 </form>
